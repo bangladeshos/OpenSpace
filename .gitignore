@@ -1,0 +1,46 @@
+# Build and editor thing
+/build*/
+*~
+*.dir
+*.idea/
+.build-vs/
+.cproject
+.project
+.vs/
+.vscode
+CMakeCache.txt
+CMakeFiles
+CMakeLists.txt.user
+cmake-build-*
+cmake_install.cmake
+install_manifest.txt
+Makefile
+
+# OS specific things
+.DS_Store
+Thumbs.db
+
+# OpenSpace-generated folders and files
+/bin/
+/cache/
+/cache-*/
+/cache_gdal/
+/mrf_cache/
+/documentation/
+/logs/
+/screenshots/
+/recordings/
+/user/
+/sync/
+/temp/
+# Customization is not supposed to be committed
+customization.lua
+# The COMMIT info is generated everytime CMake is run
+COMMIT.md
+*_codegen.cpp
+# SkyBrowser Module downloaded data
+/modules/skybrowser/wwtimagedata
+doc
+config/schema/sgct.schema.json
+settings.json
+openspace.cfg.override

@@ -1,0 +1,51 @@
+local transforms = asset.require("./transforms")
+
+
+
+local textures = asset.resource({
+  Type = "HttpSynchronization",
+  Name = "Sun textures",
+  Identifier = "sun_textures",
+  Version = 4
+})
+
+
+local SunGlare = {
+  Identifier = "SunGlare",
+  Parent = transforms.SunIAU.Identifier,
+  Renderable = {
+    Type = "RenderablePlaneImageLocal",
+    Size = 41109609582.189,
+    Origin = "Center",
+    Billboard = true,
+    Texture = textures .. "halo.png",
+    BlendMode = "Additive",
+    Opacity = 0.65
+  },
+  GUI = {
+    Name = "Sun Glare",
+    Path = "/Solar System/Sun",
+    Description = "Sun glare effect. Enabled by default instead of sun globe"
+  }
+}
+
+
+asset.onInitialize(function()
+  openspace.addSceneGraphNode(SunGlare)
+end)
+
+asset.onDeinitialize(function()
+  openspace.removeSceneGraphNode(SunGlare)
+end)
+
+asset.export(SunGlare)
+
+
+
+asset.meta = {
+  Name = "Sun Glare",
+  Description = "Image plane with sun glare effect",
+  Author = "OpenSpace Team",
+  URL = "http://openspaceproject.com",
+  License = "MIT license"
+}
